@@ -557,6 +557,11 @@ struct FreeDelete {
 template <typename T>
 using UniqueCPtr = std::unique_ptr<T, FreeDelete>;
 
+bool IsSamsungROM();
+
+// Returns renamed odex file name if exists
+std::string GetRenamedOdexFileName(std::string odex_filename);
+
 }  // namespace art
 
 #endif  // ART_RUNTIME_UTILS_H_

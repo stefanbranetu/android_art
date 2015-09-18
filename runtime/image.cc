@@ -92,7 +92,7 @@ bool ImageHeader::IsValid() const {
   if (oat_file_begin_ >= oat_data_begin_) {
     return false;
   }
-  if (image_roots_ <= image_begin_ || oat_file_begin_ <= image_roots_) {
+  if (oat_file_begin_ <= image_roots_) {
     return false;
   }
   if (!IsAligned<kPageSize>(patch_delta_)) {
