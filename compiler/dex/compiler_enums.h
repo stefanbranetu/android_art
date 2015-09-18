@@ -241,6 +241,7 @@ enum MIROptimizationFlagPositions {
   kMIRInlinedPred,                    // Invoke is inlined via prediction.
   kMIRCallee,                         // Instruction is inlined from callee.
   kMIRIgnoreSuspendCheck,
+  kMIRIgnoreZeroDivCheck,
   kMIRDup,
   kMIRMark,                           // Temporary node mark.
   kMIRLastMIRFlag,
@@ -538,6 +539,7 @@ enum FixupKind {
   kFixupMovImmLST,   // kThumb2MovImm16LST.
   kFixupMovImmHST,   // kThumb2MovImm16HST.
   kFixupAlign4,      // Align to 4-byte boundary.
+  kFixupA53Erratum835769,  // Cortex A53 Erratum 835769.
 };
 
 std::ostream& operator<<(std::ostream& os, const FixupKind& kind);
